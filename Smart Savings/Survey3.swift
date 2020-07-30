@@ -11,6 +11,8 @@ import UIKit
 class Survey3: UIViewController {
     var countYes = 0
     var countNo = 0
+    var price = " "
+    var item = " "
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +31,12 @@ class Survey3: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vs = segue.destination as? Survey1
+        let vs = segue.destination as? Survey4
         vs?.countYes = countYes
         vs?.countNo = countNo
+        vs?.price = price
+        vs?.item = item
+        
     
     }
 

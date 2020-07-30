@@ -11,6 +11,8 @@ import UIKit
 class Survey4: UIViewController {
     var countYes = 0
     var countNo = 0
+    var price = " "
+    var item = " "
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,7 @@ class Survey4: UIViewController {
     
     @IBAction func yesButton(_ sender: UIButton) {
         countYes += 1
-               performSegue(withIdentifier: "Segue4", sender : self)
+        performSegue(withIdentifier: "Segue4", sender : self)
     }
     
     @IBAction func noButton(_ sender: UIButton) {
@@ -28,9 +30,11 @@ class Survey4: UIViewController {
         performSegue(withIdentifier: "Segue4", sender: self)
     }
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          let vs = segue.destination as? Survey1
+          let vs = segue.destination as? Survey5
           vs?.countYes = countYes
           vs?.countNo = countNo
+          vs?.price = price
+          vs?.item = item
       
       }
 

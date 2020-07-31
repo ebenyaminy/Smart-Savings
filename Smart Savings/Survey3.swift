@@ -11,8 +11,9 @@ import UIKit
 class Survey3: UIViewController {
     var countYes = 0
     var countNo = 0
-    var price = " "
+    var price = 0.0
     var item = " "
+    var budget = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class Survey3: UIViewController {
         vs?.countNo = countNo
         vs?.price = price
         vs?.item = item
+        vs?.budget = budget
         
     
     }

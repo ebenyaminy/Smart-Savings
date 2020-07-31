@@ -11,8 +11,9 @@ import UIKit
 class needsandWants: UIViewController {
     var countYes = 0
     var countNo = 0
-    var price = " "
+    var price = 0.0
     var item = " "
+    var budget = 0.0
 
     @IBOutlet weak var resultLabel: UITextField!
     @IBOutlet weak var noTextField: UITextField!
@@ -32,14 +33,19 @@ class needsandWants: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func Segue2(_ sender: UIButton) {
+        performSegue(withIdentifier: "Segue10", sender: self )
+    }
+    
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //vs?.price = price
-      //  vs?.item = item
+        let vs = segue.destination as? history
+        vs?.item = item
+        vs?.budget = budget
+        vs?.price = price
         
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
